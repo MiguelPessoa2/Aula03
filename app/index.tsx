@@ -11,12 +11,13 @@ export default function Index() {
     end={{x: 1, y: 1}}>
 
       <View style={stlyes.header}>
-        <View style={stlyes.headerItem}>
+        <TouchableOpacity style={stlyes.headerItem}>
           <Icon name='bars' size={24} color='white'/>
-        </View>
-        <View style={stlyes.headerItem}>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={stlyes.headerItem}>
           <Icon name='bell' size={24} color='white'/>
-        </View>
+        </TouchableOpacity>
       </View>
 
       <View style={stlyes.bancoWrapper}>
@@ -26,7 +27,9 @@ export default function Index() {
 
       <View style={stlyes.dataWrapper}>
         <Text style={stlyes.nameText}>Usuário</Text>
-        <Icon name='chevron-down' color='white' size={15}/>
+        <TouchableOpacity>
+          <Icon name='chevron-down' color='white' size={15}/>
+        </TouchableOpacity>
       </View>
 
       <View style={stlyes.infoWrapper}>
@@ -41,6 +44,24 @@ export default function Index() {
         <TouchableOpacity>
           <Text style={stlyes.outraContaText}>Acessar outra conta</Text>
         </TouchableOpacity>
+      </View>
+
+      <View style={stlyes.bottomWrapper}>
+        <TouchableOpacity style={stlyes.bottomWrapperItem}>
+          <Icon name='lock' size={20} color="white"/>
+          <Text style={stlyes.bottomText}>Chave de Segurança</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={[stlyes.bottomWrapperItem, {borderLeftColor: 'white', borderRightColor: 'white', borderLeftWidth: 1, borderRightWidth: 1}]}>
+          <Icon name='comment-dots' size={24} color='white'/>
+          <Text style={stlyes.bottomText}>BIA</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={stlyes.bottomWrapperItem}>
+          <Icon name='pix' size={20} color='white'/>
+          <Text style={stlyes.bottomText}>PIX</Text>
+        </TouchableOpacity>
+
       </View>
     </LinearGradient>
   );
@@ -124,6 +145,23 @@ const stlyes = StyleSheet.create({
     color: 'white',
     textDecorationLine: 'underline',
     fontWeight: 'bold'
+  },
+  bottomWrapper: {
+    width: '90%',
+    flexDirection: 'row',
+    marginTop: 40
+
+  },
+  bottomWrapperItem: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 12
+  },
+  bottomText: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
 
 
